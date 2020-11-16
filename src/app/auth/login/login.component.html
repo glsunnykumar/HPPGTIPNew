@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+<app-navigation></app-navigation>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" class="form-signin">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <img class="mb-12" src="../../../assets/Images/Logo.jfif" alt="" width="180" height="180">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <mat-form-field>
+            
+        <input matInput 
+        name ="email"
+        ngModel
+        #emailInput="ngModel"
+         type ="email"
+         placeholder="E-Mail" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid Email</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input 
+        type ="password"
+        matInput
+        name="password"
+        ngModel
+        #passwordInput ="ngModel"
+        minlength="5"
+        placeholder="password"
+        required
+        >
+        <mat-error *ngIf="passwordInput.invalid">Please enter a Valid Password</mat-error>
+    </mat-form-field>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+  </form>
+</div>
+</div>

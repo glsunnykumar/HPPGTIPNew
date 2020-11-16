@@ -1,0 +1,170 @@
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Dummy Heading</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+            </li>
+            <li>
+                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <ul class="sidebar-menu">
+        <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+        <li class="active" ><a routerLink="/" class="sidebar-header" href="#"><i data-feather="box"></i> <span>Member Info</span><i class="fa fa-angle-right pull-right"></i></a>
+            <ul class="sidebar-submenu">
+                <li class="active">
+                    <ul class="sidebar-submenu">
+                        <li><a routerLink="/"><i class="fa fa-circle"></i>Add Member</a></li>
+                        <li><a routerLink="/catLvl1"><i class="fa fa-circle"></i>List Member</a></li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </li>
+        <li class="active" ><a routerLink="/" class="sidebar-header" href="#"><i data-feather="box"></i> <span>Student</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li class="active">
+                  <ul class="sidebar-submenu">
+                      <li><a routerLink="/student/create"><i class="fa fa-circle"></i>Add Student</a></li>
+                      <li><a routerLink="/students"><i class="fa fa-circle"></i>Student List</a></li>
+                  </ul>
+              </li>
+             
+          </ul>
+      </li>
+<!-- 
+    <ul class="sidebar-menu"> -->
+     
+      <li class="active" ><a routerLink="/" class="sidebar-header" href="#"><i data-feather="box"></i> <span>Category</span><i class="fa fa-angle-right pull-right"></i></a>
+        <ul class="sidebar-submenu">
+            <li class="active">
+                <ul class="sidebar-submenu">
+                    <li><a routerLink="/"><i class="fa fa-circle"></i>Category Main</a></li>
+                    <li><a routerLink="/catLvl1"><i class="fa fa-circle"></i>Category LVL1</a></li>
+                    <li><a routerLink="/catLvl2"><i class="fa fa-circle"></i>Category LVL2</a></li>
+                    <li><a routerLink="/catLvl3"><i class="fa fa-circle"></i>Category LVL3</a></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </li>
+
+    <li class="active" ><a routerLink="/" class="sidebar-header" href="#"><i data-feather="box"></i> <span>Product</span><i class="fa fa-angle-right pull-right"></i></a>
+        <ul class="sidebar-submenu">
+            <li class="active">
+                <ul class="sidebar-submenu">
+                    <li><a routerLink="/product/create"><i class="fa fa-circle"></i>Add Product</a></li>
+                    <li><a routerLink="/products"><i class="fa fa-circle"></i>List Product</a></li>
+                    <li><a href="create/lvl2"><i class="fa fa-circle"></i>Category LVL2</a></li>
+                    <li><a href="create/lvl3"><i class="fa fa-circle"></i>Category LVL3</a></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </li>
+     
+      <li><a class="sidebar-header" href=""><i data-feather="dollar-sign"></i><span>Sales</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="order.html"><i class="fa fa-circle"></i>Orders</a></li>
+              <li><a href="transactions.html"><i class="fa fa-circle"></i>Transactions</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href=""><i data-feather="tag"></i><span>Coupons</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="coupon-list.html"><i class="fa fa-circle"></i>List Coupons</a></li>
+              <li><a href="coupon-create.html"><i class="fa fa-circle"></i>Create Coupons </a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href="#"><i data-feather="clipboard"></i><span>Pages</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="pages-list.html"><i class="fa fa-circle"></i>List Page</a></li>
+              <li><a href="page-create.html"><i class="fa fa-circle"></i>Create Page</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href="media.html"><i data-feather="camera"></i><span>Media</span></a></li>
+      <li><a class="sidebar-header" href="#"><i data-feather="align-left"></i><span>Menus</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="menu-list.html"><i class="fa fa-circle"></i>Menu Lists</a></li>
+              <li><a href="create-menu.html"><i class="fa fa-circle"></i>Create Menu</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href=""><i data-feather="user-plus"></i><span>Users</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="user-list.html"><i class="fa fa-circle"></i>User List</a></li>
+              <li><a href="create-user.html"><i class="fa fa-circle"></i>Create User</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href=""><i data-feather="users"></i><span>Vendors</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="list-vendor.html"><i class="fa fa-circle"></i>Vendor List</a></li>
+              <li><a href="create-vendors.html"><i class="fa fa-circle"></i>Create Vendor</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href=""><i data-feather="chrome"></i><span>Localization</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="translations.html"><i class="fa fa-circle"></i>Translations</a></li>
+              <li><a href="currency-rates.html"><i class="fa fa-circle"></i>Currency Rates</a></li>
+              <li><a href="taxes.html"><i class="fa fa-circle"></i>Taxes</a></li>
+          </ul>
+      </li>
+      <li><a class="sidebar-header" href="reports.html"><i data-feather="bar-chart"></i><span>Reports</span></a></li>
+      <li><a class="sidebar-header" href=""><i data-feather="settings"></i><span>Settings</span><i class="fa fa-angle-right pull-right"></i></a>
+          <ul class="sidebar-submenu">
+              <li><a href="profile.html"><i class="fa fa-circle"></i>Profile</a></li>
+          </ul>
+      </li>
+<li><a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>Invoice</span></a>
+      </li>
+      <li><a class="sidebar-header" href="login.html"><i data-feather="log-in"></i><span>Login</span></a>
+      </li>
+  </ul>
+
+
