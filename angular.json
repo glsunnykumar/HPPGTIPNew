@@ -30,13 +30,11 @@
               "src/assets/css/fontawesome.css",
               "src/assets/css/flag-icon.css",
               "src/assets/css/jsgrid.css",
-              "src/assets/css/bootstrap.css",
-              "src/assets/css/admin.css"
+              "src/assets/css/bootstrap.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assests/js/sidebar-menu.js",
               "src/assets/js/popper.min.js",
               "src/assets/js/icons/feather-icon/feather.min.js",
               "src/assets/js/icons/feather-icon/feather-icon.js",
@@ -46,7 +44,8 @@
               "src/assets/js/jsgrid/griddata-manage-product.js",
               "src/assets/js/jsgrid/jsgrid-manage-product.js",
               "src/assets/js/chat-menu.js",
-              "src/assets/js/admin-script.js"
+              "src/assets/js/admin-script.js",
+              "src/assets/js/admin.js"
             ]
           },
           "configurations": {

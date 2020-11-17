@@ -3,7 +3,8 @@ import * as Feather from 'feather-icons';
 
 @Component({
   selector: 'app-admin-root',
-  templateUrl :'./admin.component.html'
+  templateUrl :'./admin.component.html',
+  styleUrls:['./admin.component.css']
 })
 export class AdminComponent implements OnInit,AfterViewInit {
 

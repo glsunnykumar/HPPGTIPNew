@@ -12,8 +12,9 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
-  declarations: [AdminComponent,HomeComponent, MembersComponent, NotificationComponent, GalleryComponent, HeaderComponent, SidebarComponent],
+  declarations: [AdminComponent,HomeComponent, MembersComponent, NotificationComponent, GalleryComponent, HeaderComponent, SidebarComponent, DashboardComponent],
   imports :[RouterModule, AdminRoutingModule, CommonModule ,MatTreeModule,MatMenuModule]
 })
 
