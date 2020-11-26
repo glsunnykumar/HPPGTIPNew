@@ -6,18 +6,24 @@
         </div>
 
         <ul class="list-unstyled components">
-          <i data-feather="database"></i><span>Dashboard</span>
-            
+            <li>
+                 <a routerLink="/admin"><i data-feather="briefcase"></i><span>Dashboard</span></a>
+              </li>
+       
+              <li>
+                <a routerLink="/admin/meta"><i data-feather="database"></i><span>Site Meta</span> </a>
+             </li>
+
             <li>
               
                 <a href="#pageSubmenuHome" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i data-feather="home"></i><span>Home</span></a>
                 <ul class="collapse list-unstyled" id="pageSubmenuHome">
 
                     <li>
-                        <a href="#"><strong>&#9776;</strong>&nbsp;List Home Data</a>
+                        <a routerLink="/admin/home"><strong>&#9776;</strong>&nbsp;List Home Data</a>
                     </li>
                     <li>
-                        <a href="#"><strong>&#9769;</strong>&nbsp;Add Home Data</a>
+                        <a routerLink="/admin/home/create"><strong>&#9769;</strong>&nbsp;Add Home Data</a>
                     </li>
                    
                    
@@ -27,10 +33,10 @@
                 <a href="#pageSubmenuMember" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i data-feather="user"></i><span>Member</span></a>
                 <ul class="collapse list-unstyled" id="pageSubmenuMember">
                     <li>
-                        <a href="#"><strong>&#9776;</strong>&nbsp;List Members</a>
+                        <a routerLink="/admin/member"><strong>&#9776;</strong>&nbsp;List Members</a>
                     </li>
                     <li>
-                        <a href="#"><strong>&#9769;</strong>&nbsp;Add Members</a>
+                        <a routerLink="/admin/member/create"><strong>&#9769;</strong>&nbsp;Add Members</a>
                     </li>
                    
                   
@@ -42,10 +48,10 @@
                 <a href="#pageSubmenuNotifications" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i data-feather="bell"></i><span>Notifications</span></a>
                 <ul class="collapse list-unstyled" id="pageSubmenuNotifications">
                     <li>
-                        <a href="#"><strong>&#9776;</strong>&nbsp;List Notifications</a>
+                        <a routerLink="/admin/notification"><strong>&#9776;</strong>&nbsp;List Notifications</a>
                     </li>
                     <li>
-                        <a href="#"><strong>&#9769;</strong>&nbsp;Add Notifications</a>
+                        <a routerLink="/admin/notification/create"><strong>&#9769;</strong>&nbsp;Add Notifications</a>
                     </li>
                    
                 </ul>
@@ -55,10 +61,10 @@
                 <a href="#pageSubmenuAchievments" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i data-feather="award"></i><span>Achievments</span></a>
                 <ul class="collapse list-unstyled" id="pageSubmenuAchievments">
                     <li>
-                        <a href="#"><strong>&#9776;</strong>&nbsp;List Achievments</a>
+                        <a routerLink="/admin/achievment"><strong>&#9776;</strong>&nbsp;List Achievments</a>
                     </li>
                     <li>
-                        <a href="#"><strong>&#9769;</strong>&nbsp;Add Achievments</a>
+                        <a routerLink="/admin/achievment/create"><strong>&#9769;</strong>&nbsp;Add Achievments</a>
                     </li>
                    
                 </ul>
@@ -69,10 +75,10 @@
                 <a href="#pageSubmenuGallery" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i data-feather="camera"></i><span>Gallery</span></a>
                 <ul class="collapse list-unstyled" id="pageSubmenuGallery">
                     <li>
-                        <a href="#"><strong>&#9776;</strong>&nbsp;List Gallery</a>
+                        <a routerLink="/admin/gallery"><strong>&#9776;</strong>&nbsp;List Gallery</a>
                     </li>
                     <li>
-                        <a href="#"><strong>&#9769;</strong>&nbsp;Add Gallery</a>
+                        <a routerLink="/admin/gallery/create"><strong>&#9769;</strong>&nbsp;Add Gallery</a>
                     </li>
                    
                 </ul>

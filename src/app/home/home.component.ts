@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../admin/home/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isLoading = false;
+  title : string ;
+  description :string;
+
+  constructor(public homeService :HomeService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    this.homeService.getMeta().subscribe(metaData =>{
+      console.log(metaData);
+      this.isLoading= false;
+      this.description = metaData.welcomeDescription;
+      this.title =metaData.welcomeTitle
+      
+      });
   }
 
 }

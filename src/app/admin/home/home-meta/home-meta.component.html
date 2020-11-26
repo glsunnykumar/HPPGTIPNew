@@ -1,0 +1,129 @@
+<form [formGroup]="form" (submit)="saveMeta()" *ngIf="!isLoading">
+
+    <mat-card>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <mat-card-title>Website Main Info</mat-card-title>
+        <form [formGroup]="form" (submit)="saveMeta()" *ngIf="!isLoading">
+           <div class="card-box">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field>
+                                <mat-label>Website Title</mat-label>
+                                <input matInput type="text" placeholder="Add Website Title" formControlName="Title">
+                                <mat-error *ngIf="form.get('Title').invalid">Please enter a valid Title</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field>
+                                <mat-label>Website Description</mat-label>
+                                <textarea matInput border="1px" type="text" placeholder="Add Website Description"
+                                    formControlName="Description"></textarea>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field>
+                                <mat-label>Welcome Text</mat-label>
+                                <input matInput type="text" placeholder="Add Website Welcome Text"
+                                    formControlName="welcomeText">
+                                <mat-error *ngIf="form.get('welcomeText').invalid">Please enter a valid Text</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field>
+                                <mat-label>Website welcome Description</mat-label>
+                                <textarea matInput border="1px" type="text"
+                                    placeholder="Add Website welcome Description"
+                                    formControlName="welcomeDescription"></textarea>
+                                <mat-error *ngIf="form.get('welcomeDescription').invalid">Please enter a valid Text
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+            <mat-divider></mat-divider>
+            <div class="card-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-label>Select Favicon Icon</mat-label>
+                    <div *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+                        <img [src]="imagePreview" height="25px" width="25px" [alt]="form.value.title">
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <div class="col-md-3"> <button mat-stroked-button (click)="filepicker.click()"
+                                    type="button">Pick Image</button>
+                                <input type="file" #filepicker (change)="onImgePicked($event)"></div>
+                            <div class="col-md-9" style="text-align: left;"><label class="label-info">Please select 25px
+                                    * 25px image</label></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-label>Select Website Icon</mat-label>
+                    <div *ngIf="imageBannerPreview !== '' && imageBannerPreview && form.get('imageBanner').valid">
+                        <img [src]="imageBannerPreview" height="150px" width="150px" [alt]="form.value.title">
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <div class="col-md-3"> <button mat-stroked-button (click)="filepickerBanner.click()"
+                                    type="button">Pick Icon</button>
+                                <input type="file" #filepickerBanner (change)="onBannerImgePicked($event)"></div>
+                            <div class="col-md-9" style="text-align: left;"><label class="label-info">Please select
+                                    150px * 150px image</label></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+
+           
+
+                <div class="m-t-20 text-center">
+                    <hr />
+                    <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+                        {{ mode=='create' ? 'Save' :'Update ' }}
+                    </button>
+
+                    <button mat-raised-button class="btn btn-primary" color="primary" type="submit" style="margin-left: 5px;">
+                       cancel
+                    </button>
+                </div>
+          
+
+
+        </form>
+    </mat-card>

@@ -30,7 +30,9 @@
               "src/assets/css/fontawesome.css",
               "src/assets/css/flag-icon.css",
               "src/assets/css/jsgrid.css",
-              "src/assets/css/bootstrap.css"
+              "src/assets/css/bootstrap.css",
+              "src/assets/style.css"
+
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
