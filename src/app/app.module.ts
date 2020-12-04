@@ -31,6 +31,8 @@ import {SignupComponent} from './auth/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ConfirmBoxComponent } from './common/confirm-box/confirm-box.component';
+import { LoadingSpinnerComponent } from './common/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     GalleryComponent,
     LoginComponent,
     SignupComponent,
-    NavigationComponent
+    NavigationComponent,
+    ConfirmBoxComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

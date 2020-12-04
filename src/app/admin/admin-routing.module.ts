@@ -32,13 +32,13 @@ const routes :Routes =[
         {path :'home/create' , component:HomeAddComponent},
         {path :'home/edit/:id' , component:HomeEditComponent},
 
-        {path :'member' , component:MemberListComponent},
+        {path :'members' , component:MemberListComponent},
         {path :'member/create' , component:MemberAddComponent},
-        {path :'member/edit/:id' , component:MemberEditComponent},
+        {path :'edit/:id' , component:MemberAddComponent},
 
         {path :'notification' , component:NotificationListComponent},
         {path :'notification/create' , component:NotificationAddComponent},
-        {path :'notification/edit/:id' , component:NotificationEditComponent},
+        {path :'notification/edit/:id' , component:NotificationAddComponent},
 
         {path :'achievment' , component:AchievmentListComponent},
         {path :'achievment/create' , component:AchievmentAddComponent},

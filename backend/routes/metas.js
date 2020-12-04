@@ -27,40 +27,7 @@ const storage = multer.diskStorage({
 });
 
 
-router.post("", multer({ storage: storage }).array("image"), (req, res, next) => {
-    const url = req.protocol + "://" + req.get("host");
-    console.log(req.files);
-    console.log(req.body);
-    const meta = new Meta({
-        title: req.body.title,
-        description: req.body.description,
-        imageFaviconPath: url + "/images/" + req.files[0].filename,
-        imageIconPath :url +"/images/" + req.files[1].filename,
-        welcomeTitle :req.body.welcomeText,
-        welcomeDescription : req.body.welcomeDescription
-    })
-    meta.save().then((createdMeta) => {
-        res.status(201).json({
-            message: 'meta added succesfully',
-            meta: {
-                ...createdMeta,
-                id: createdMeta._id
-            }
-        });
-    });
 
-});
-
-
-// router.get("/", (req, res, next) => {
-//     var mysort ={rollno:1};
-//     Meta.find().sort(mysort).then(documents => {
-//         res.status(200).json({
-//             message: 'Students fetched suceesfully',
-//             students: documents
-//         });
-//     })
-// });
 
 router.get("/", (req, res, next) => {
     Meta.findOne().then(meta => {
@@ -86,20 +53,56 @@ router.get("/:id", (req, res, next) => {
 })
 
 
+router.post("", multer({ storage: storage }).array("image"), (req, res, next) => {
+    const url = req.protocol + "://" + req.get("host");
+    const meta = new Meta({
+        title: req.body.title,
+        description: req.body.description,
+        imageFaviconPath: url + "/images/" + req.files[0].filename,
+        imageIconPath :url +"/images/" + req.files[1].filename,
+        welcomeTitle :req.body.welcomeText,
+        welcomeDescription : req.body.welcomeDescription
+    })
+    meta.save().then((createdMeta) => {
+        res.status(201).json({
+            message: 'meta added succesfully',
+            meta: {
+                ...createdMeta,
+                id: createdMeta._id
+            }
+        });
+    });
 
-router.put("/:id", multer({ storage: storage }).single("image"), (req, res, next) => {
-    let imagePath = req.body.imagePath;
-    if (req.file) {
+});
+
+
+
+router.put("/:id", multer({ storage: storage }) .array("image"), (req, res, next) => {
+   console.log("hitting update")
+    let imageFaviconPath ="";
+    let imageIconPath ="" ;
+    if (req.files) {
         const url = req.protocol + "://" + req.get("host");
-        imagePath: url + "/images/" + req.file.filename
+        imageFaviconPath: url + "/images/" + req.files[0].filename;
+        imageIconPath :  url + "/images/" + req.files[1].filename;
     }
+    else
+    {
+        imageIconPath = req.body.imageIconPath;
+        imageFaviconPath = req.body.imageFaviconPath;
+    }
+    console.log(imageFaviconPath);
+    const url = req.protocol + "://" + req.get("host");
     const meta = new Meta({
         _id:req.body.id,
-        title:req.body.tile,
-        description: req.body.description,
-        imagePath: imagePath
+        title:req.body.WebsiteTitle,
+        description: req.body.WebsiteDescription,
+        imageFaviconPath: imageFaviconPath,
+        imageIconPath :imageIconPath,
+        welcomeTitle :req.body.websiteWelcomeText,
+        welcomeDescription : req.body.websiteWelcomeDescription
     });
-    console.log(meta);
+    
     Meta.updateOne({ _id: req.body.id }, meta).then(result => {
         console.log(result);
         res.status(200).json({ message: "Update Succesfull" });

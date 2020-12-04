@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
-
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Router } from '@angular/router';
+
 import { HomeMeta } from './homeMeta.model';
 
 @Injectable({

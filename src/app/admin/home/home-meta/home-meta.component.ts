@@ -41,7 +41,7 @@ export class HomeMetaComponent implements OnInit {
         validators: [Validators.required]
       })
     });
-     //this.getMeta();
+     this.getMeta();
 
   }
 
@@ -53,12 +53,12 @@ export class HomeMetaComponent implements OnInit {
     if (this.mode === 'create') {
       console.log(this.form.value.image);
       console.log(this.form.value.imageBanner);
-      //this.homeService.addMeta(this.form.value.Title, this.form.value.Description, this.form.value.image,this.form.value.imageBanner,this.form.value.welcomeText,this.form.value.welcomeDescription);
+      this.homeService.addMeta(this.form.value.Title, this.form.value.Description, this.form.value.image,this.form.value.imageBanner,this.form.value.welcomeText,this.form.value.welcomeDescription);
     }
     else {
      this.homeService.updateMeta(this.metaId, this.form.value.Title, this.form.value.Description, this.form.value.image,this.form.value.imageBanner,this.form.value.welcomeText,this.form.value.welcomeDescription);
     }
-    //this.form.reset();
+   this.getMeta();
   }
 
   getMeta(){

@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { MembersComponent } from './members/members.component';
 import { NotificationComponent } from './notification/notification.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import {AdminRoutingModule} from './admin-routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -31,14 +31,64 @@ import { ContactAddComponent } from './contact/contact-add/contact-add.component
 import { HomeMetaComponent } from './home/home-meta/home-meta.component';
 
 import { MatCardModule } from '@angular/material/card';
-import {MatTreeModule} from '@angular/material/tree';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { LoadingSpinnerComponent } from '../common/loading-spinner/loading-spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatNativeDateModule } from '@angular/material/core';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 @NgModule({
-  declarations: [AdminComponent,HomeComponent, MembersComponent, NotificationComponent, GalleryComponent, HeaderComponent, SidebarComponent, DashboardComponent, HomeAddComponent, HomeListComponent, HomeEditComponent, MemberAddComponent, MemberListComponent, MemberEditComponent, NotificationAddComponent, NotificationEditComponent, NotificationListComponent, AchievmentAddComponent, AchievmentListComponent, AchievmentEditComponent, GalleryAddComponent, GalleryEditComponent, GalleryListComponent, ContactAddComponent, HomeMetaComponent],
-  imports :[RouterModule, AdminRoutingModule,ReactiveFormsModule, CommonModule ,MatTreeModule,MatMenuModule,ChartsModule,MatCardModule,MatInputModule,HttpClientModule ]
+  declarations: [AdminComponent,
+    HomeComponent,
+    MembersComponent,
+    NotificationComponent,
+    GalleryComponent,
+    HeaderComponent,
+    SidebarComponent,
+    DashboardComponent,
+    HomeAddComponent,
+    HomeListComponent,
+    HomeEditComponent,
+    MemberAddComponent,
+    MemberListComponent,
+    MemberEditComponent,
+    NotificationAddComponent,
+    NotificationEditComponent,
+    NotificationListComponent,
+    AchievmentAddComponent,
+    AchievmentListComponent,
+    AchievmentEditComponent,
+    GalleryAddComponent,
+    GalleryEditComponent,
+    GalleryListComponent,
+    ContactAddComponent,
+    HomeMetaComponent],
+  imports: [RouterModule,
+    MatTableModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    MatTreeModule,
+    MatMenuModule,
+    ChartsModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    PdfViewerModule
+  ]
 })
 
-export class AdminModule{}
+export class AdminModule { }

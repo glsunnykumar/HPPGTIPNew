@@ -1,21 +1,96 @@
-<div class="row">
-    <div class="col-md-3">
-        Image
-    </div>
-    <div class="col-md-9">
-        Member Name
-    </div>
-</div>
+<form [formGroup]="form" (submit)="saveMember()" >
+    
+ 
+  <mat-card>
+         <div class="row">
+    <mat-spinner  *ngIf ="isLoading"></mat-spinner>
+   </div>
+        <mat-card-title> {{ mode=='create' ? 'Add Member Information' :'Update Member Information ' }}</mat-card-title>
+       
+        
+<div class="card-box">
+   
 
-<div class="row">
-    <div class="col-md-4">
-      Member  District
+    <div class="row" *ngIf ="!isLoading">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+        <mat-label>Select Member Picture</mat-label>
+        <div >
+            <img [src]="imagePreview" height="100px" width="100px" placeholder='../../assets/Images/defaultImage.png' [alt]="form.value.title">
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-md-3"> <button mat-stroked-button (click)="filepicker.click()"
+                        type="button">Pick Image</button>
+                    <input type="file" #filepicker (change)="onImgePicked($event)"></div>
+                <div class="col-md-9" style="text-align: left;"><label class="label-info">Please select 25px
+                        * 25px image</label></div>
+            </div>
+
+
+        </div>
     </div>
-    <div class="col-md-4">
-        Member Designation
+      
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 offset-md-2" style="padding:0px">
+            <mat-form-field>
+                <mat-label>Member Name</mat-label>
+                <input matInput type="text" placeholder="Add Member Name" formControlName="Name">
+                <mat-error *ngIf="form.get('Name').invalid">Please enter a valid Name</mat-error>
+            </mat-form-field>
+      </div>
+     
     </div>
-    <div class="col-md-4">
-        Member Status
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+                <input type="text"
+                       placeholder="Member Role"
+                       aria-label="Number"
+                       matInput
+                       formControlName ="myControl"
+                       tooltip ="test"
+                       [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="form.get('myControl').invalid">Please select valid role</mat-error>
+              </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+                <input type="text"
+                       placeholder="Member District"
+                       aria-label="Number"
+                       matInput
+                       formControlName="myControlDistrict"
+                       [matAutocomplete]="auto1">
+                <mat-autocomplete #auto1="matAutocomplete">
+                  <mat-option *ngFor="let optionDistrict of filteredDistrictOptions | async" [value]="optionDistrict">
+                    {{optionDistrict}}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="form.get('myControlDistrict').invalid">Please select member district</mat-error>
+              </mat-form-field>
+        </div>
+
     </div>
+  </div>
+  
+  <div class="m-t-20 text-center">
+    <hr />
+    <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+        {{ mode=='create' ? 'Save' :'Update ' }}
+    </button>
+
+    <button mat-raised-button class="btn btn-primary" color="primary" type="submit" style="margin-left: 5px;">
+       cancel
+    </button>
 </div>
+    </mat-card>
+
+</form>
+
 

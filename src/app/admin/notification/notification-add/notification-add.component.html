@@ -1,1 +1,98 @@
-<p>notification-add works!</p>
+<form [formGroup]="form" (submit)="saveNotification()" *ngIf="!isLoading">
+    <mat-card>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <mat-card-title>{{ mode=='create' ? 'Add Notification File' :'Update Notification File ' }}</mat-card-title>
+
+
+        <div class="card-box">
+    
+             <div class="row">
+               
+             </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text upload" id="btnUpload">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                                <input type="file" (change)="onImgePicked($event)" class="custom-file-input" id="inputGroupFile01" formControlName="pdfFile" aria-describedby="inputGroupFileAddon01">
+                           
+                            <label class="custom-file-label" for="inputGroupFile01">Choose Pdf file</label>
+                        </div>
+                        <label matLabel fromControlName ="filePath"  >{{filePath}}</label>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <mat-label>Select Member Picture</mat-label>
+                    <div>
+                        <img [src]="imagePreview" height="50px" width="50px"
+                            placeholder='../../assets/Images/defaultImage.png' [alt]="form.value.title">
+                       
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6"> <button mat-stroked-button class="btn btn-primary" (click)="filepicker.click()"
+                                    type="button">Pick Notification</button>
+                                <input type="file" #filepicker (change)="onImgePicked($event)"></div>
+                            <div class="col-md-6" style="text-align: left;"><label class="label-info">select pdf file
+                                    </label></div>
+                        </div>
+
+
+                    </div>
+                </div> -->
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 offset-md-2" style="padding:0px">
+                    <mat-form-field>
+                        <mat-label>Notification Title</mat-label>
+                        <input matInput type="text" placeholder="Add Member Name" formControlName="Title">
+                        <mat-error *ngIf="form.get('Title').invalid">Please enter a valid Tile</mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " style="padding:0px">
+                    
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a Notification date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="datePick">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+
+                </div>
+
+               
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " style="padding:0px">
+                    <mat-form-field>
+                        <mat-label>Notification Description</mat-label>
+                        <textarea matInput type="text" placeholder="Add Notification Description"
+                            formControlName="Description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-t-20 text-center">
+            <hr />
+            <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+                {{ mode=='create' ? 'Save' :'Update ' }}
+            </button>
+
+            <button mat-raised-button class="btn btn-primary" color="primary" type="submit" style="margin-left: 5px;">
+                cancel
+            </button>
+        </div>
+    </mat-card>
+
+</form>
