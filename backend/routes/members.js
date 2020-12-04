@@ -49,7 +49,9 @@ router.get("/:id", (req, res, next) => {
 })
 
 router.delete("/:id", (req, res, next) => {
+    console.log("deleting member");
     Member.deleteOne({ _id: req.params.id }).then(result => {
+        console.log("deleting member");
         res.status(200).json({
             message: 'Member deleted succesfully'
         });

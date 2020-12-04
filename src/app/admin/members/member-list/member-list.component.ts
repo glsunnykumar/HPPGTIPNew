@@ -54,7 +54,7 @@ export class MemberListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(dialogResult => {
       console.log(dialogResult)
       if(dialogResult){
-     // this.categoryService.deleteCategory(catId);
+         this.memberService.deleteMember(catId);
       }
     });
   }

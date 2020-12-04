@@ -103,7 +103,7 @@ import { map } from 'rxjs/operators';
       }
 
       deleteMember(id: string) {
-        this.http.delete('http://localhost:3000/api/admin/' + id)
+        this.http.delete('http://localhost:3000/api/member/' + id)
           .subscribe(() => {
             const updatedMember = this.members.filter(mem => mem.id != id);
             this.members = updatedMember;
