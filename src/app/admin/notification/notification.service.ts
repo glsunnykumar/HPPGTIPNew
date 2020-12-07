@@ -64,4 +64,15 @@ import { map } from 'rxjs/operators';
     getnotification(id:string){
       return this.http.get<{ _id: string, title: string, description: string, file: string ,date : string}>('http://localhost:3000/api/notification/' + id)
     }
+
+    deleteNotification(id: string) {
+      this.http.delete('http://localhost:3000/api/notification/' + id)
+        .subscribe(() => {
+          const updatedMember = this.notifications.filter(mem => mem.id != id);
+          this.notifications = updatedMember;
+          this.notificationUpdated.next([...this.notifications]);
+          //console.log('Deleted !');
+        })
+    }
+
   }

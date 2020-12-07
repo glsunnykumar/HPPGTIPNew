@@ -45,8 +45,15 @@ router.get("/:id", (req, res, next) => {
             res.status(404).json({ message: 'notification not found' });
         }
     })
-})
+});
 
+router.delete("/:id", (req, res, next) => {
+    Notification.deleteOne({ _id: req.params.id }).then(result => {
+        res.status(200).json({
+            message: 'Notification deleted succesfully'
+        });
+    });
+});
 
 router.post("", multer({ storage: storage }).single("image"), (req, res, next) => {
     const url = req.protocol + "://" + req.get("host");
