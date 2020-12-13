@@ -55,6 +55,7 @@ router.get("/:id", (req, res, next) => {
 
 router.post("", multer({ storage: storage }).array("image"), (req, res, next) => {
     const url = req.protocol + "://" + req.get("host");
+    console.log(req.files);
     const meta = new Meta({
         title: req.body.title,
         description: req.body.description,
@@ -63,6 +64,7 @@ router.post("", multer({ storage: storage }).array("image"), (req, res, next) =>
         welcomeTitle :req.body.welcomeText,
         welcomeDescription : req.body.welcomeDescription
     })
+    console.log(meta);
     meta.save().then((createdMeta) => {
         res.status(201).json({
             message: 'meta added succesfully',
@@ -79,12 +81,13 @@ router.post("", multer({ storage: storage }).array("image"), (req, res, next) =>
 
 router.put("/:id", multer({ storage: storage }) .array("image"), (req, res, next) => {
    console.log("hitting update")
-    let imageFaviconPath ="";
-    let imageIconPath ="" ;
+    let imageFaviconPath ;
+    let imageIconPath  ;
+    console.log(req.files);
     if (req.files) {
         const url = req.protocol + "://" + req.get("host");
-        imageFaviconPath: url + "/images/" + req.files[0].filename;
-        imageIconPath :  url + "/images/" + req.files[1].filename;
+        imageFaviconPath = url + "/images/" + req.files[0].filename;
+        imageIconPath =  url + "/images/" + req.files[1].filename;
     }
     else
     {

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {AdminModule} from './admin/admin.module';
@@ -29,10 +30,11 @@ import { GalleryComponent } from './gallery/gallery.component';
 import {LoginComponent} from './auth/login/login.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ConfirmBoxComponent } from './common/confirm-box/confirm-box.component';
 import { LoadingSpinnerComponent } from './common/loading-spinner/loading-spinner.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,15 +47,18 @@ import { LoadingSpinnerComponent } from './common/loading-spinner/loading-spinne
     SignupComponent,
     NavigationComponent,
     ConfirmBoxComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     AdminModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatGridListModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,

@@ -22,6 +22,7 @@ export class NotificationListComponent implements OnInit {
   imagePreview: string ='../../../../assets/Images/pdf.jfif';
   notifications: Notification[] = [];
    isLoading = false;
+   viewPdf= false;
   dataSource =null;
   private notificationSubs: Subscription;
   @ViewChild(MatPaginator,{static: false}) paginator: MatPaginator;

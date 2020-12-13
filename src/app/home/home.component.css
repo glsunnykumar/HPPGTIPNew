@@ -118,4 +118,68 @@ body {
   .bg-f4f9fd {
     background-color: #f4f9fd;
   }
+
+  :host {
+  display: block;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.team{
+  margin: 4em 0;
+  position: relative;  
+ }
+ .team h1{
+  color:#F97300;
+  margin: 2em; 
+ }
+ .team .item{
+  position: relative;
+ }
+ .team .des{
+  background: #F97300;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 93%;
+  transition:.3s ease-in-out;
   
+ }
+
+ .team .item:hover .des{
+  height: 100%;
+  background:#f973007d;
+  position: absolute;
+  width: 89%;
+  padding: 5em;
+  top: 0;
+  border-bottom-left-radius: 0;
+ }
+.h1{
+  color :red;
+  font-size: 30px;
+}
+
+.mat-list-item{
+  background-color: whitesmoke;
+  text-align: center;
+  display: grid;
+}
+
+:host /deep/ .mat-list-base .mat-list-item .mat-list-item-content {
+  display: grid;
+  font-family: cursive;
+}
+
+.mat-divider{
+  height: 5px;
+}
+mat-grid-tile {
+  background: lightblue;
+}

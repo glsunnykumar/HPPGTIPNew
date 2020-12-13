@@ -6,13 +6,20 @@
        </a>
       </div>
     </div>
+
+    <div (mouseover)="viewPdf=true" (mouseout)="viewPdf=false">
+     
+    </div>
   
+    <div class="container" *ngIf="viewPdf">
+      <pdf-viewer [src]="pdfSource"
+                  [original-size]="false"
+      ></pdf-viewer>
+    </div>
+
      <div class="row" >
        <div class="col-md-12">
         <mat-spinner  *ngIf ="isLoading"></mat-spinner>
-
-      
-
         <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z12" *ngIf="!isLoading" >
         
          
@@ -37,10 +44,8 @@
 
             <ng-container matColumnDef="Title">
               <th mat-header-cell *matHeaderCellDef > Title </th>
-              <td mat-cell *matCellDef="let element"> <img src="../../../../assets/Images/pdf.jfif" height="50px" width="50px"> 
-                <pdf-viewer [src]="element.file"
-                [original-size]="false"
-    ></pdf-viewer>
+              <td  mat-cell *matCellDef="let element"> <img src="{{imagePreview}}" height="50px" width="50px"> 
+               
                 {{element.title}} </td>
             </ng-container>
     
@@ -56,6 +61,7 @@
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element" class="action-link"> 
           <a mat-button color="primary" [routerLink]="['/notification/edit',element.id]" >Edit</a> | 
+          <a mat-button color="primary" [routerLink]="['/notification/edit',element.id]" >View File</a> | 
           <button mat-button color="warn" (click)="confirmDialog(element.id,element.title)">Delete</button>
         </td>
       </ng-container>
