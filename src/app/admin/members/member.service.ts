@@ -44,6 +44,10 @@ import { map } from 'rxjs/operators';
         return this.http.get<{ _id: string, MemberName: string, MemberRole: string, MemberImage: string ,MemberDistrict : string}>('http://localhost:3000/api/member/' + id)
       }
 
+      addMemberExcel(data :any){
+        console.log(data);
+      }
+
       addMember(name: string, role: string, image: File,district: string) {
         const meberData = new FormData();
         meberData.append("name", name);

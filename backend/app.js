@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const metaRoutes = require("./routes/metas")
 const memberRoutes = require("./routes/members")
 const notificationRoutes = require("./routes/notification")
-
+const galleryRoutes = require("./routes/gallery")
 const app = express();
 mongoose.connect("mongodb://localhost:27017/HPPGTIPDB", { useNewUrlParser: true })
 //mongoose.connect('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false')
@@ -63,6 +63,7 @@ app.use((req, res, next) => {
  app.use("/api/meta",metaRoutes);  
  app.use("/api/member",memberRoutes);    
  app.use("/api/notification",notificationRoutes);
+ app.use("/api/gallery",galleryRoutes);
 // app.use("/api/product",productRoutes);  
 
 

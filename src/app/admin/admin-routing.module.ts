@@ -46,8 +46,8 @@ const routes :Routes =[
 
         {path :'gallery' , component:GalleryListComponent},
         {path :'gallery/create' , component:GalleryAddComponent},
-        {path :'gallery/edit/:id' , component:GalleryEditComponent},
-          
+        {path :'gallery/edit/:id' , component:GalleryAddComponent},
+        {path :'gallerys' , component:GalleryListComponent} ,
         {path :'contact' , component:ContactAddComponent}
 
     ]

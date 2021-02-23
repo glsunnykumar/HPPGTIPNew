@@ -1,0 +1,102 @@
+<app-navigation></app-navigation>
+
+  <!-- Contact Us Section -->
+    <section class="Material-contact-section section-padding section-dark">
+     
+      <div class="container">
+        <h3 matLine style="background-color: rgb(85, 85, 250); text-align: center;height :50px;color: white; font-size: 20px;font-weight: 700;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-top: 70px;"> Contact Us</h3>
+          <div class="row">
+              <!-- Section Titile -->
+              <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+                  <h1 class="section-title">Love to Hear From You</h1>
+              </div>
+          </div>
+          <div class="row">
+              <!-- Section Titile -->
+              <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content.</p>
+
+                <div class="find-widget">
+                 Company:  <a href="https://hostriver.ro">HostRiver</a>
+                </div>
+                <div class="find-widget">
+                 Address: <a href="#">4435 Berkshire Circle Knoxville</a>
+                </div>
+                <div class="find-widget">
+                  Phone:  <a href="#">+ 879-890-9767</a>
+                </div>
+                
+                <div class="find-widget">
+                  Website:  <a href="https://uny.ro">www.uny.ro</a>
+                </div>
+                <div class="find-widget">
+                   Program: <a href="#">Mon to Sat: 09:30 AM - 10.30 PM</a>
+                </div>
+              </div>
+              <!-- contact form -->
+              <div class="col-md-6">
+                <form [formGroup]="form" (submit)="sendMessage()" >
+                    <mat-card>
+                           <div class="row">
+                      <mat-spinner  *ngIf ="isLoading"></mat-spinner>
+                     </div>
+                  <div class="card-box">
+                     
+                  
+                      <div class="row" >
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " style="padding:0px">
+                              <mat-form-field>
+                                  <mat-label>Name</mat-label>
+                                  <input matInput type="text" placeholder="Add Event Title" formControlName="Name">
+                                  <mat-error *ngIf="form.get('Name').invalid">Please enter a valid Name</mat-error>
+                              </mat-form-field>
+                        </div>
+                       
+                      </div>
+                  
+                      <div class="row">
+                          <div class="col-md-6 col-md-6 col-sm-6 col-xs-6">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <textarea matInput border="1px" type="email" placeholder="Add Event Description"
+                                    formControlName="Email"></textarea>
+                
+                            </mat-form-field>
+                          </div>
+                  
+                          
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-md-6 col-sm-6 col-xs-6">
+                          <mat-form-field>
+                              <mat-label>Message</mat-label>
+                              <textarea matInput border="1px" type="text" placeholder="Add your Message"
+                                  formControlName="Message"></textarea>
+              
+                          </mat-form-field>
+                        </div>
+                
+                        
+                    </div>
+                    </div>
+
+                    <div class="m-t-20 text-center">
+                      <hr />
+                      <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+                          Send
+                      </button>
+                  
+                      <button mat-raised-button class="btn btn-primary" color="primary" type="submit" style="margin-left: 5px;">
+                         cancel
+                      </button>
+                  </div>
+                    
+                   
+                      </mat-card>
+                  
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>

@@ -70,11 +70,13 @@ export class HomeComponent implements OnInit {
 
       this.memberService.getMembers();
       this.memberService.getMemberUpdatedListner().subscribe((member :Member[])=>{
+        this.isLoading= false;
         this.members= member;
       })
 
       this.notificationService.getNotifications();
       this.notificationService.getNotificationUpdatedListner().subscribe((notification :Notification[])=>{
+        this.isLoading= false;
         this.notifications= notification;
       })
       

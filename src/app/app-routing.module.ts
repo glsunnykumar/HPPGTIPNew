@@ -7,6 +7,7 @@ import {NotificationComponent} from './notification/notification.component'
 import {GalleryComponent} from './gallery/gallery.component'
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
 
     // {path :'student/create' , component:StudentCreateComponent } ,
@@ -19,7 +20,8 @@ const routes: Routes = [
        {path :'notifications' , component:NotificationComponent } ,
        {path :'gallery' , component:GalleryComponent } ,
        {path :'login' , component:LoginComponent } ,
-       {path :'signup' , component:SignupComponent } 
+       {path :'signup' , component:SignupComponent } ,
+       {path :'contact' , component:ContactComponent } 
     // {path :'create/lvl1' , component:CatCreate1Component } ,
     // {path :'create/lvl2' , component:CatCreate2Component } ,
     // {path :'create/lvl3' , component:CatCreate3Component } ,

@@ -1,6 +1,39 @@
-<form [formGroup]="form" (submit)="saveMember()" >
+<form (submit)="saveMemberFromExcel()">
+  <mat-card>
+
+    <mat-card-title *ngIf ="mode=='create'" > Upload From Excel</mat-card-title>
+    <div class="container">
+     
+
+
+      <p>
+        Start editing to see some magic happen :)
+      </p>
+      <button mat-stroked-button (click)="memberPicker.click()"
+                        type="button">Pick Member Excel</button>
+      <input type="file" #memberPicker  (change)="onFileChange($event)" />
+      <div id="output"></div>
+      <br>
+      <div *ngIf="willDownload">
+        <a id="download"> Download JSON File </a>
+      </div>
+      <div class="m-t-20 text-center">
+        <hr />
+        <button mat-raised-button class="btn btn-primary" color="primary" type="submit">
+            upload
+        </button>
     
- 
+        <button mat-raised-button class="btn btn-primary" color="primary" type="submit" style="margin-left: 5px;">
+           cancel
+        </button>
+    </div>
+     
+    </div>
+  </mat-card>
+</form>
+
+
+<form [formGroup]="form" (submit)="saveMember()" > 
   <mat-card>
          <div class="row">
     <mat-spinner  *ngIf ="isLoading"></mat-spinner>
@@ -41,6 +74,23 @@
     </div>
 
     <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+        <mat-form-field>
+          <mat-label>School Name</mat-label>
+          <input matInput type="text" placeholder="Member School Name" formControlName="SchoolName">
+          <mat-error *ngIf="form.get('SchoolName').invalid">Please enter a valid School Name</mat-error>
+      </mat-form-field>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
+        <mat-form-field>
+          <mat-label>Amount</mat-label>
+          <input matInput type="number" placeholder="Amount" formControlName="Amount">
+          <mat-error *ngIf="form.get('Amount').invalid">Please enter a Depoist Amount</mat-error>
+      </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-md-6">
             <mat-form-field class="example-full-width">
                 <input type="text"
@@ -76,6 +126,23 @@
               </mat-form-field>
         </div>
 
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+        <mat-form-field>
+          <mat-label>Depoist Date</mat-label>
+          <input matInput type="date" placeholder="Membership Date" formControlName="MembershipDate">
+          <mat-error *ngIf="form.get('MembershipDate').invalid">Please enter a valid MemberShip Date</mat-error>
+      </mat-form-field>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
+        <mat-form-field>
+          <mat-label>Renewal Date</mat-label>
+          <input matInput type="date" placeholder="Renewal Date" formControlName="RenewalDate">
+          <mat-error *ngIf="form.get('RenewalDate').invalid">Please enter a Valid Renewal Date</mat-error>
+      </mat-form-field>
+        </div>
     </div>
   </div>
   

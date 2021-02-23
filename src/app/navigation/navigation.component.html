@@ -27,20 +27,21 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" routerLink="/home" >Home <span class="sr-only">(current)</span></a>
+            <a mat-button routerLinkActive="mat-accent" routerLink="/home" >Home <span class="sr-only">(current)</span></a>
+          </li>
+         
+          <li class="nav-item">
+            <a   routerLink="/notifications" mat-button routerLinkActive="mat-accent" tabindex="-1" aria-disabled="true">Notification</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/members">Members</a>
+            <a mat-button routerLinkActive="mat-accent" routerLink="/members">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/notifications" tabindex="-1" aria-disabled="true">Notification</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/gallery" tabindex="-1" aria-disabled="true">Gallery</a>
+            <a mat-button routerLinkActive="mat-accent" routerLink="/gallery" tabindex="-1" aria-disabled="true">Gallery</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="/gallery" tabindex="-1" aria-disabled="true">Contact Us</a>
+            <a mat-button routerLinkActive="mat-accent" routerLink="/contact" tabindex="-1" aria-disabled="true">Contact Us</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/login" tabindex="-1" aria-disabled="true"  >Login</a>

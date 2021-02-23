@@ -34,6 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon'
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -80,6 +81,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CommonModule,
     MatTreeModule,
     MatMenuModule,
+    MatIconModule,
     ChartsModule,
     MatCardModule,
     MatProgressSpinnerModule,

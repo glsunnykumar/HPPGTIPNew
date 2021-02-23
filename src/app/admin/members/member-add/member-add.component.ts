@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {Observable} from 'rxjs';
@@ -7,6 +7,7 @@ import { map, startWith } from 'rxjs/operators';
 import { mimeType } from '../../mime-type.validator';
 import { Member } from '../member.model';
 import {MemberService} from '../member.service' ;
+import * as XLSX from 'xlsx';
 
 
 // import {} from '../../../../'
@@ -21,8 +22,11 @@ export class MemberAddComponent implements OnInit {
   form:FormGroup;
   imagePreview: string ='../../../../assets/Images/defaultImage.png';
   mode = 'create';
+  isloadingExcel = false;
   private memberId: string;
   member :Member;
+  name = 'This is XLSX TO JSON CONVERTER';
+  willDownload = false;
 
   // myControl = new FormControl();
   myControlDistrict = new FormControl();
@@ -30,8 +34,43 @@ export class MemberAddComponent implements OnInit {
   optionDistrict :string[]=['Kangra','Shimla','Mandi','Bilaspur','Chamba'];
   filteredOptions: Observable<string[]>;
   filteredDistrictOptions:Observable<string[]>;
+  jsonData = null;
 
   constructor(public memberService :MemberService,public route: ActivatedRoute) { }
+  onFileChange(ev) {
+    let workBook = null;
+  
+    const reader = new FileReader();
+    const file = ev.target.files[0];
+    reader.onload = (event) => {
+      const data = reader.result;
+      workBook = XLSX.read(data, { type: 'binary' });
+     this.jsonData = workBook.SheetNames.reduce((initial, name) => {
+        const sheet = workBook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+
+      
+      const dataString = JSON.stringify(this.jsonData);
+      document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
+      this.setDownload(dataString)
+      ;
+    }
+    
+    reader.readAsBinaryString(file);
+  }
+
+
+  setDownload(data) {
+    this.willDownload = true;
+    setTimeout(() => {
+      const el = document.querySelector("#download");
+      el.setAttribute("href", `data:text/json;charset=utf-8,${encodeURIComponent(data)}`);
+      el.setAttribute("download", 'xlsxtojson.json');
+    }, 1000)
+  }
+
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -39,10 +78,14 @@ export class MemberAddComponent implements OnInit {
       'Name': new FormControl('', {
         validators: [Validators.required]
       }),
+      'SchoolName': new FormControl(''),
+      'Amount': new FormControl('',{validators :[Validators.required]}),
       'image' :new FormControl(null,{validators:[Validators.required],asyncValidators :[mimeType]}),
       'myControl': new FormControl('', {
         validators: [Validators.required]
       }),
+      'MembershipDate': new FormControl(''),
+      'RenewalDate': new FormControl(''),
       'myControlDistrict': new FormControl('', {
         validators: [Validators.required]
       })
@@ -104,6 +147,11 @@ export class MemberAddComponent implements OnInit {
 
     return this.optionDistrict.filter(option => option.toLowerCase().includes(filterValue));
   }
+
+  saveMemberFromExcel(){
+    this.memberService.addMemberExcel(this.jsonData);
+  }
+
   saveMember(){
     if (this.form.invalid) {
       return;
@@ -115,6 +163,6 @@ export class MemberAddComponent implements OnInit {
     else{
       this.memberService.updateMember(this.memberId,this.form.value.Name, this.form.value.myControl, this.form.value.image,this.form.value.myControlDistrict);
     }
-  }
+}
 
 }

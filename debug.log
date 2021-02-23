@@ -112,3 +112,59 @@
 [1213/200405.690:ERROR:crash_report_database_win.cc(455)] unexpected header
 [1213/200915.963:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1213/201905.692:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1213/203405.693:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1215/162024.645:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/100826.237:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/101826.236:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/101826.260:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1217/101826.262:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/101826.263:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/102326.325:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1217/105756.673:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1218/114009.926:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1218/120232.120:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1218/185744.043:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1219/105630.754:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/082252.225:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/083252.099:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/083252.126:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\hp\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2ad42d9c-f85f-4e5d-bd69-5086eae7c031: The system cannot find the path specified. (0x3)
+[1221/083252.127:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1221/083252.127:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/083252.127:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/083752.289:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/085252.291:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/090752.291:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/092252.292:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/093752.292:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/095252.292:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/100752.294:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/172532.665:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1221/174032.666:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/174900.066:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/180400.066:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/181900.067:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/183400.068:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/184900.068:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/190400.069:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/191900.069:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/193400.087:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/194900.088:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/200400.088:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/201900.090:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/203400.091:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/204900.091:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/210400.092:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1223/211403.051:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1223/211403.033:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1223/211403.033:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1223/211403.145:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1223/211403.149:ERROR:exception_snapshot_win.cc(99)] thread ID 8984 not found in process
+[1223/211403.149:ERROR:exception_snapshot_win.cc(99)] thread ID 11384 not found in process
+[1223/211403.103:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1223/211403.149:ERROR:exception_snapshot_win.cc(99)] thread ID 13248 not found in process
+[1223/211403.149:ERROR:exception_snapshot_win.cc(99)] thread ID 224 not found in process
+[1223/211403.149:ERROR:exception_snapshot_win.cc(99)] thread ID 10368 not found in process
+[1224/182829.111:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1224/190924.017:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1225/104651.110:ERROR:crash_report_database_win.cc(455)] unexpected header
+[1226/115537.265:ERROR:crash_report_database_win.cc(455)] unexpected header
