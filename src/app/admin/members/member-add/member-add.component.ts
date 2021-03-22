@@ -119,6 +119,7 @@ export class MemberAddComponent implements OnInit {
           });
           this.imagePreview = this.member.MemberImage;
           this.form.get('image').updateValueAndValidity();
+          // this is test
         });
       };
     });
